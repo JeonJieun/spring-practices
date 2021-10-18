@@ -1,5 +1,12 @@
 package com.douzone.hellospring.controller;
 
+import java.io.IOException;
+import java.io.Writer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
+	
+	public void a() {
+	}
+	public void b() {
+	}
+	public void c() {
+	}
 	
 	@RequestMapping("/hello")
 	public String hello() {
@@ -45,5 +59,16 @@ public class HelloController {
 	public String hello6() {
 		System.out.println("hello6() called");
 		return "redirect:/hello";
+	}
+	
+	@RequestMapping("/hello7")
+	public void hello7 (
+		HttpServletRequest req, 
+		HttpServletResponse resp, 
+		HttpSession session,
+		Writer out) throws IOException {
+		String no = req.getParameter("n");
+		out.write("<h1>Hello World</h1>");
 	}	
+	
 }
