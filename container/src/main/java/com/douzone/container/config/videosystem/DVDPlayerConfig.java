@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.douzone.container.videosystem.Avengers;
-import com.douzone.container.videosystem.BlankDisc;
 import com.douzone.container.videosystem.DVDPlayer;
 import com.douzone.container.videosystem.DigitalVideoDisc;
 
@@ -24,6 +23,7 @@ public class DVDPlayerConfig {
 		return new DVDPlayer(avegers());
 	}
 	
+	// 추천
 	// 주입(Injection) 하기2
 	// 파라미터로 빈 전달하기
 	// 생성자 주입
